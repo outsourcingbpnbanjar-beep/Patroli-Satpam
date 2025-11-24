@@ -1,0 +1,8 @@
+{
+  "name": "SecurePatrol AI",
+  "description": "A smart security patrol application enabling guards to log evidence, locations, and utilize AI to analyze room security status automatically.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}
