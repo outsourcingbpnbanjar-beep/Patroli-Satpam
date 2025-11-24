@@ -2,10 +2,9 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { PatrolStatus, AIAnalysisResult } from '../types';
 import { DEFAULT_SYSTEM_INSTRUCTION } from '../constants';
 
-const apiKey = process.env.API_KEY || '';
-
-// Initialize the client only if key exists to avoid immediate crash, though key is required.
-const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
+// Fix: Always use process.env.API_KEY directly as per guidelines.
+// Assume it is pre-configured and valid.
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
 
 // Helper function to compress image
 const compressImage = (base64Str: string, maxWidth = 1024): Promise<string> => {
@@ -39,10 +38,8 @@ const compressImage = (base64Str: string, maxWidth = 1024): Promise<string> => {
 };
 
 export const analyzePatrolImage = async (base64Image: string): Promise<AIAnalysisResult> => {
-  if (!ai) {
-    throw new Error("API Key Gemini tidak ditemukan.");
-  }
-
+  // Removed defensive check for ai instance as per guidelines
+  
   try {
     // Compress the image before sending to avoid payload size limits/XHR errors
     const compressedImage = await compressImage(base64Image);

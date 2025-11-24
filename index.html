@@ -4,17 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SecurePatrol AI</title>
-    <!-- Keep Tailwind CDN for simplicity in this specific setup to avoid extra CSS config files -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <style>
       body {
         font-family: 'Inter', sans-serif;
         background-color: #f1f5f9;
       }
-      /* Custom scrollbar for webkit */
       ::-webkit-scrollbar {
         width: 6px;
       }
@@ -25,7 +22,6 @@
         background-color: #cbd5e1;
         border-radius: 20px;
       }
-      /* Leaflet Container Fix */
       .leaflet-container {
         width: 100%;
         height: 100%;
